@@ -1,0 +1,51 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.pasos {
+  margin-top: 10rem;
+  overflow: hidden;
+
+  &__contenido {
+    margin-top: -1px;
+    background-color: v.$primario;
+    padding: v.$separacion 0;
+  }
+
+  &__heading {
+    text-align: center;
+    color: v.$blanco;
+    span {
+      display: block;
+      font-size: 2rem;
+    }
+
+    @include m.tablet {
+      font-size: 5rem;
+      span {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &__grid {
+    @include m.tablet {
+      display: flex;
+    }
+  }
+
+  &__imagen {
+    width: 90%;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.05) rotate(-5deg);
+    }
+  }
+
+  &__wave {
+    &--ultima {
+      margin-top: -1px;
+      transform: rotate(180deg);
+    }
+  }
+}
